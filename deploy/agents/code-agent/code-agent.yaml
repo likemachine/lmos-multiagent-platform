@@ -1,0 +1,31 @@
+apiVersion: lmos.eclipse/v1
+kind: Agent
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"lmos.eclipse/v1","kind":"Agent","metadata":{"annotations":{},"labels":{"subset":"stable","version":"1.0.0"},"name":"code-agent","namespace":"default"},"spec":{"description":"Programming assistant for writing and explaining application code, debugging errors, shell commands, Python, Kotlin and general software development. Does not connect to databases, analyse stored business data, calculate business metrics or answer questions about PostgreSQL data.","providedCapabilities":[{"description":"Writes and explains application code, diagnoses programming errors, and provides Bash, Python, Kotlin and other software development solutions. Does not perform PostgreSQL data analysis or answer questions about stored business data.","name":"code-assistance","version":"1.0.0"}],"supportedChannels":["web"],"supportedTenants":["default"]}}
+  creationTimestamp: "2026-10-22T09:47:42Z"
+  generation: 2
+  labels:
+    subset: stable
+    version: 1.0.0
+  name: code-agent
+  namespace: default
+  resourceVersion: "1866184"
+  uid: b4013b53-17cc-4147-805a-4b6c74d7583e
+spec:
+  description: Programming assistant for writing and explaining application code,
+    debugging errors, shell commands, Python, Kotlin and general software development.
+    Does not connect to databases, analyse stored business data, calculate business
+    metrics or answer questions about PostgreSQL data.
+  providedCapabilities:
+  - description: Writes and explains application code, diagnoses programming errors,
+      and provides Bash, Python, Kotlin and other software development solutions.
+      Does not perform PostgreSQL data analysis or answer questions about stored business
+      data.
+    name: code-assistance
+    version: 1.0.0
+  supportedChannels:
+  - web
+  supportedTenants:
+  - default

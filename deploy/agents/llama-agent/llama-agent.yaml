@@ -1,0 +1,15 @@
+apiVersion: lmos.eclipse/v1
+kind: Agent
+metadata:
+  name: llama-agent
+  namespace: default
+  labels:
+    version: "1.0.0"
+spec:
+  description: "Агент генерации ответов на базе llama3.2 через Ollama"
+  supportedChannels:
+    - web
+  providedCapabilities:
+    - name: text-generation
+      version: "1.0.0"
+      description: "Генерация текстовых ответов"

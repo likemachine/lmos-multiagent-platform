@@ -1,0 +1,30 @@
+apiVersion: lmos.eclipse/v1
+kind: Agent
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"lmos.eclipse/v1","kind":"Agent","metadata":{"annotations":{},"labels":{"subset":"stable","version":"1.0.0"},"name":"postgres-analyst","namespace":"default"},"spec":{"description":"Read-only PostgreSQL data analyst. Use this agent for questions about stored business data, database tables, schemas, records, clients, orders, products, revenue, average order value and query plans. This agent analyses PostgreSQL data and writes read-only analytical SQL queries.","providedCapabilities":[{"description":"Answers questions about data stored in PostgreSQL, including tables, schemas, records, clients, orders, products, revenue, average order value and query plans. Runs read-only analytical SQL queries.","name":"postgresql-analytics","version":"1.0.0"}],"supportedChannels":["web"],"supportedTenants":["default"]}}
+  creationTimestamp: "2026-10-30T06:23:31Z"
+  generation: 8
+  labels:
+    subset: diagnostic
+    version: 1.0.0
+  name: postgres-analyst
+  namespace: default
+  resourceVersion: "1866470"
+  uid: 5e524b51-93bf-4c16-a13a-db9dfc70853c
+spec:
+  description: Read-only PostgreSQL data analyst. Use this agent for questions about
+    stored business data, database tables, schemas, records, clients, orders, products,
+    revenue, average order value and query plans. This agent analyses PostgreSQL data
+    and writes read-only analytical SQL queries.
+  providedCapabilities:
+  - description: Answers questions about data stored in PostgreSQL, including tables,
+      schemas, records, clients, orders, products, revenue, average order value and
+      query plans. Runs read-only analytical SQL queries.
+    name: postgresql-analytics
+    version: 1.0.0
+  supportedChannels:
+  - web
+  supportedTenants:
+  - default

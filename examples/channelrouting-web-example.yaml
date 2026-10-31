@@ -1,0 +1,59 @@
+apiVersion: lmos.eclipse/v1
+kind: ChannelRouting
+metadata:
+  annotations:
+    javaoperatorsdk.io/previous: 55167c77-0228-4af7-868d-8c99dd4fec4a,1865815
+  creationTimestamp: "2026-10-16T10:13:51Z"
+  generation: 14
+  labels:
+    channel: web
+    subset: stable
+    tenant: default
+    version: 1.0.0
+  name: web
+  namespace: default
+  ownerReferences:
+  - apiVersion: lmos.eclipse/v1
+    kind: Channel
+    name: web
+    uid: a6d1ea11-a2f2-42ad-8450-57a8fd3f53fe
+  resourceVersion: "1866185"
+  uid: 6c8452be-fe76-4440-bed7-b0c715cfaf84
+spec:
+  capabilityGroups:
+  - capabilities:
+    - description: Answers any general user question and writes texts of any kind,
+        such as short texts, summaries, explanations and greetings
+      host: llama-agent.default.svc.cluster.local
+      name: text-generation
+      providedVersion: 1.0.0
+      requiredVersion: 1.0.0
+    description: Агент генерации ответов на базе llama3.2 через Ollama
+    name: llama-agent
+  - capabilities:
+    - description: Answers questions about data stored in PostgreSQL, including tables,
+        schemas, records, clients, orders, products, revenue, average order value
+        and query plans. Runs read-only analytical SQL queries.
+      host: postgres-analyst.default.svc.cluster.local
+      name: postgresql-analytics
+      providedVersion: 1.0.0
+      requiredVersion: 1.0.0
+    description: Read-only PostgreSQL data analyst. Use this agent for questions about
+      stored business data, database tables, schemas, records, clients, orders, products,
+      revenue, average order value and query plans. This agent analyses PostgreSQL
+      data and writes read-only analytical SQL queries.
+    name: postgres-analyst
+  - capabilities:
+    - description: Writes and explains application code, diagnoses programming errors,
+        and provides Bash, Python, Kotlin and other software development solutions.
+        Does not perform PostgreSQL data analysis or answer questions about stored
+        business data.
+      host: code-agent.default.svc.cluster.local
+      name: code-assistance
+      providedVersion: 1.0.0
+      requiredVersion: 1.0.0
+    description: Programming assistant for writing and explaining application code,
+      debugging errors, shell commands, Python, Kotlin and general software development.
+      Does not connect to databases, analyse stored business data, calculate business
+      metrics or answer questions about PostgreSQL data.
+    name: code-agent
